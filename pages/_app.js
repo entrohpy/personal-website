@@ -3,10 +3,13 @@ import '../styles/globals.css';
 
 const App = ({ Component, pageProps }) => {
   return (
-    <Component {...pageProps}>
+    <div>
       <Head>
+        <title>Rohit Nema | Stay Tuned :)</title>
       </Head>
-    </Component>
+      <Component {...pageProps}>
+      </Component>
+    </div>
   );
 }
 
