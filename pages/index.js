@@ -13,8 +13,8 @@ import {
 const Home = () => {
   return (
     <div className="flex h-screen">
-      <div className="flex justify-center m-auto">
-        <img className="w-64 h-64 rounded-full" src="/images/profile.png" /> {/* image */}
+      <div className="text-center md:text-left md:flex justify-center m-auto">
+        <img className="mx-auto w-64 h-64 rounded-full" src="/images/profile.png" /> {/* image */}
         <div className="my-auto p-6 text-lg">
           <div className="font-display font-semibold text-3xl">
           Rohit Nema
@@ -25,7 +25,7 @@ const Home = () => {
           <div>
             Undergraduate Cryptography Researcher
           </div>
-          <div className="flex space-x-4 mt-3" style={{fontSize: 32}}>
+          <div className="space-x-4 mt-3" style={{fontSize: 32}}>
             <button className="text-teal-600 hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-500">
               <Link href="mailto:rohit@rohitnema.me">
                 <FontAwesomeIcon
