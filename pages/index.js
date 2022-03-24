@@ -1,9 +1,61 @@
+import Link from 'next/link';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {
+  faGithub,
+  faLinkedin,
+} from "@fortawesome/free-brands-svg-icons";
+import {
+  faEnvelope,
+  faFileLines,
+} from "@fortawesome/free-solid-svg-icons";
+
+{/* <div className="container mx-auto p-6"> */}
 const Home = () => {
   return (
     <div className="flex h-screen">
-
-      <div className="text-2xl m-auto font-display">
-        <p className="uppercase text-center w-full p-6 rounded-xl items-center bg-slate-700 text-slate-50">Stay Tuned :)</p>
+      <div className="flex justify-center m-auto">
+        <img className="w-64 h-64 rounded-full" src="/images/profile.png" /> {/* image */}
+        <div className="my-auto p-6 text-xl">
+          <div className="font-display text-3xl">
+          Rohit Nema
+          </div>
+          <div>
+            Computer Science & Mathematics at UCLA
+          </div>
+          <div>
+            Undergraduate Cryptography Researcher
+          </div>
+          <div className="flex space-x-4 mt-3" style={{fontSize: 32}}>
+            <button className="text-teal-600 hover:text-teal-700">
+              <Link href="mailto:rohit@rohitnema.me">
+                <FontAwesomeIcon
+                  icon={faEnvelope}
+                />
+              </Link>
+            </button>
+            <button className="text-teal-600 hover:text-teal-700">
+              <Link href="/CV.pdf">
+                <FontAwesomeIcon
+                  icon={faFileLines}
+                />
+              </Link>
+            </button>
+            <button className="text-teal-600 hover:text-teal-700">
+              <a target="_blank" href="https://github.com/entrohpy/">
+                <FontAwesomeIcon
+                  icon={faGithub}
+                />
+              </a>
+            </button>
+            <button className="text-teal-600 hover:text-teal-700">
+              <a target="_blank" href="https://linkedin.com/in/rohit-nema/">
+                <FontAwesomeIcon
+                  icon={faLinkedin}
+                />
+              </a>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
