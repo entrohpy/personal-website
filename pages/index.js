@@ -15,8 +15,8 @@ const Home = () => {
     <div className="flex h-screen">
       <div className="flex justify-center m-auto">
         <img className="w-64 h-64 rounded-full" src="/images/profile.png" /> {/* image */}
-        <div className="my-auto p-6 text-xl">
-          <div className="font-display text-3xl">
+        <div className="my-auto p-6 text-lg">
+          <div className="font-display font-semibold text-3xl">
           Rohit Nema
           </div>
           <div>
@@ -26,28 +26,28 @@ const Home = () => {
             Undergraduate Cryptography Researcher
           </div>
           <div className="flex space-x-4 mt-3" style={{fontSize: 32}}>
-            <button className="text-teal-600 hover:text-teal-700">
+            <button className="text-teal-600 hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-500">
               <Link href="mailto:rohit@rohitnema.me">
                 <FontAwesomeIcon
                   icon={faEnvelope}
                 />
               </Link>
             </button>
-            <button className="text-teal-600 hover:text-teal-700">
+            <button className="text-teal-600 hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-500">
               <Link href="/CV.pdf">
                 <FontAwesomeIcon
                   icon={faFileLines}
                 />
               </Link>
             </button>
-            <button className="text-teal-600 hover:text-teal-700">
+            <button className="text-teal-600 hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-500">
               <a target="_blank" href="https://github.com/entrohpy/">
                 <FontAwesomeIcon
                   icon={faGithub}
                 />
               </a>
             </button>
-            <button className="text-teal-600 hover:text-teal-700">
+            <button className="text-teal-600 hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-500">
               <a target="_blank" href="https://linkedin.com/in/rohit-nema/">
                 <FontAwesomeIcon
                   icon={faLinkedin}

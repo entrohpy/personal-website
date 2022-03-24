@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'display': ['Arvo', 'serif'],
+        'display': ['Poppins', 'semibold'],
+        'body': ['Kufam'],
       },
     },
   },
