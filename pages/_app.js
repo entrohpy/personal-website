@@ -8,12 +8,21 @@ const App = ({ Component, pageProps }) => {
   return (
     <div>
       <Head>
-        <title>Rohit Nema | Stay Tuned :)</title>
+        <title>Rohit Nema | Welcome :)</title>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7BNKFWWXG9"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-7BNKFWWXG9');
+        </script>
       </Head>
       <Component {...pageProps}>
       </Component>
     </div>
-  );
+);
 }
 
 export default App;
