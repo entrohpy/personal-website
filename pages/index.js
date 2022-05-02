@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {
   faGithub,
@@ -27,18 +26,18 @@ const Home = () => {
           </div>
           <div className="space-x-4 mt-3" style={{fontSize: 32}}>
             <button className="text-teal-600 hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-500">
-              <Link href="mailto:rohit@rohitnema.me">
+              <a href="mailto:rohit@rohitnema.me">
                 <FontAwesomeIcon
                   icon={faEnvelope}
                 />
-              </Link>
+              </a>
             </button>
             <button className="text-teal-600 hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-500">
-              <Link href="/CV.pdf">
+              <a target="_blank" href="/CV.pdf">
                 <FontAwesomeIcon
                   icon={faFileLines}
                 />
-              </Link>
+              </a>
             </button>
             <button className="text-teal-600 hover:text-teal-700 dark:text-teal-400 dark:hover:text-teal-500">
               <a target="_blank" href="https://github.com/entrohpy/">
