@@ -8,3 +8,9 @@
     color-scheme: light dark;
     font-family: 'Kufam';
 }
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+}

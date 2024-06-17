@@ -1,11 +1,19 @@
+import react from 'react';
 import Head from 'next/head';
 import Script from 'next/script';
 import '../styles/globals.css';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 import "@fortawesome/fontawesome-svg-core/styles.css"; // import Font Awesome CSS
 import { config } from "@fortawesome/fontawesome-svg-core";
 config.autoAddCss = false;
 
+
 const App = ({ Component, pageProps }) => {
+  useEffect(() => {
+    AOS.init()
+  }, []);
   return (
     <div>
       <Script
@@ -31,7 +39,8 @@ const App = ({ Component, pageProps }) => {
         <link rel="shortcut icon" href="/favicon/favicon.ico" />
         <meta name="msapplication-TileColor" content="#da532c" />
         <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
-        <meta name="theme-color" content="#0d9488" />
+        <meta name="theme-color" content="#075985" />
+        { /* old theme: #0d9488 */ }
         <title>Rohit Nema | Welcome :)</title>
       </Head>
       <Component {...pageProps}>
