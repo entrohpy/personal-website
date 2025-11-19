@@ -41,7 +41,7 @@ const App = ({ Component, pageProps }) => {
         <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
         <meta name="theme-color" content="#075985" />
         { /* old theme: #0d9488 */ }
-        <title>Rohit Nema | Welcome :)</title>
+        <title>Ro Nema | In Development...</title>
       </Head>
       <Component {...pageProps}>
       </Component>
