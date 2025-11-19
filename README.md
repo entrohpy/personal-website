@@ -1,3 +1,3 @@
 # Personal Website
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d62b8674-1a1c-4dc8-bd85-b92e00d6931b/deploy-status)](https://app.netlify.com/sites/laughing-torvalds-e6d68e/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3d5831ab-fe16-44cb-a350-ec62d5f74306/deploy-status)](https://app.netlify.com/projects/entrohpy-personal-page/deploys)
