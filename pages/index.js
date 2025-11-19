@@ -48,7 +48,7 @@ const Home = () => {
           <img className="mx-auto w-64 h-64 rounded-full" src="/images/profile.png" /> {/* image */}
           <div className="my-auto p-6 text-lg">
             <div className="font-display font-semibold text-3xl">
-              Rohit Nema
+              Rohit "Ro" Nema
             </div>
             <div>
               PhD student, Applied Cryptography at Stanford University
