@@ -58,7 +58,7 @@ const Home = () => {
             </div>
             <div className="space-x-4 mt-3 " style={{fontSize: 32}}>
               <button className="text-sky-600 hover:text-sky-700 dark:text-sky-400 dark:hover:text-sky-500">
-                <a href="mailto:rohit@rohitnema.me">
+                <a href="mailto:ro@nema.page">
                   <FontAwesomeIcon
                     icon={faEnvelope}
                   />
