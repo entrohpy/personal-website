@@ -7,11 +7,24 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Brand / accent
         primary: 'rgb(var(--aw-color-primary) / <alpha-value>)',
         secondary: 'rgb(var(--aw-color-secondary) / <alpha-value>)',
         accent: 'rgb(var(--aw-color-accent) / <alpha-value>)',
+
+        // Text
+        heading: 'var(--aw-color-text-heading)',
         default: 'var(--aw-color-text-default)',
         muted: 'var(--aw-color-text-muted)',
+      },
+      backgroundColor: {
+        surface: 'var(--aw-color-bg-surface)',
+        placeholder: 'var(--aw-color-bg-placeholder)',
+        header: 'var(--aw-color-bg-header)',
+      },
+      borderColor: {
+        DEFAULT: 'var(--aw-color-border)',
+        subtle: 'var(--aw-color-border-subtle)',
       },
       fontFamily: {
         sans: ['var(--aw-font-sans, ui-sans-serif)', ...defaultTheme.fontFamily.sans],

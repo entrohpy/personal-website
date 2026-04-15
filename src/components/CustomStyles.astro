@@ -8,16 +8,26 @@ import '@fontsource-variable/sometype-mono';
     --aw-font-serif: 'Sometype Mono Variable';
     --aw-font-heading: 'Sometype Mono Variable';
 
+    /* Brand / accent (channel-only so opacity modifiers work: bg-primary/10) */
     --aw-color-primary: 86 91 129;
     --aw-color-secondary: 86 91 180;
     --aw-color-accent: 109 40 217;
 
+    /* Text */
     --aw-color-text-heading: rgb(0 0 0);
     --aw-color-text-default: rgb(16 16 16);
     --aw-color-text-muted: rgb(16 16 16 / 66%);
-    --aw-color-bg-page: rgb(255 255 255);
 
+    /* Surfaces */
+    --aw-color-bg-page: rgb(255 255 255);
     --aw-color-bg-page-dark: rgb(24 24 24);
+    --aw-color-bg-surface: rgb(255 255 255); /* cards, inputs */
+    --aw-color-bg-placeholder: rgb(156 163 175); /* image fallback (gray-400) */
+    --aw-color-bg-header: rgb(255 255 255 / 0.9); /* sticky header overlay */
+
+    /* Borders */
+    --aw-color-border: rgb(229 231 235); /* gray-200 */
+    --aw-color-border-subtle: rgb(107 114 128 / 0.2); /* gray-500/20 */
 
     ::selection {
       background-color: lavender;
@@ -33,10 +43,17 @@ import '@fontsource-variable/sometype-mono';
     --aw-color-secondary: 156 163 201;
     --aw-color-accent: 109 40 217;
 
-    --aw-color-text-heading: rgb(247, 248, 248);
+    --aw-color-text-heading: rgb(247 248 248);
     --aw-color-text-default: rgb(226 246 246);
     --aw-color-text-muted: rgb(226 246 246 / 80%);
+
     --aw-color-bg-page: rgb(24 24 24);
+    --aw-color-bg-surface: rgb(15 23 42); /* slate-900 */
+    --aw-color-bg-placeholder: rgb(51 65 85); /* slate-700 */
+    --aw-color-bg-header: rgb(24 24 24 / 0.9);
+
+    --aw-color-border: rgb(51 65 85); /* slate-700 */
+    --aw-color-border-subtle: rgb(148 163 184 / 0.2); /* slate-400/20 */
 
     ::selection {
       background-color: black;
