@@ -1,0 +1,107 @@
+---
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Link from '~/components/ui/Link.astro';
+import type { Widget, Headline as HeadlineProps } from '~/types';
+
+interface Paper {
+  title: string;
+  description?: string;
+  authors: Array<string>;
+  venue?: string;
+  venueFull?: string;
+  year?: number | string;
+  preprint?: string;
+  slides?: string;
+  links?: Array<{ text: string; href: string }>;
+  highlightAuthor?: string;
+}
+
+interface Props extends Omit<HeadlineProps, 'classes'>, Widget {
+  papers?: Array<Paper>;
+}
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+  papers = [],
+
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props as Props;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl ${classes?.container ?? ''}`} bg={bg}>
+  <Headline
+    title={title}
+    subtitle={subtitle}
+    tagline={tagline}
+    classes={{
+      container: 'text-left rtl:text-right',
+      title: 'text-3xl lg:text-4xl',
+      ...((classes?.headline as object) ?? {}),
+    }}
+  />
+
+  <ul class="flex flex-col gap-8">
+    {
+      papers.map((paper) => (
+        <li class="flex flex-col gap-2">
+          <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <h3 class="text-lg font-semibold text-heading">{paper.title}</h3>
+            {paper.venue && (
+              <span
+                title={paper.venueFull ?? paper.venue}
+                class="inline-flex items-center rounded-md border border-primary px-2 py-0.5 text-xs font-medium tracking-wide text-primary dark:border-blue-400 dark:text-blue-400"
+              >
+                {paper.venue}
+                {paper.year && <span class="ml-1 opacity-70">{paper.year}</span>}
+              </span>
+            )}
+          </div>
+
+          {paper.authors && paper.authors.length > 0 && (
+            <p class="text-sm text-muted">
+              {paper.authors.map((author, i) => (
+                <Fragment>
+                  {i > 0 && <span>, </span>}
+                  {paper.highlightAuthor && author === paper.highlightAuthor ? (
+                    <span class="font-semibold text-default">{author}</span>
+                  ) : (
+                    <span>{author}</span>
+                  )}
+                </Fragment>
+              ))}
+            </p>
+          )}
+
+          {paper.description && <p class="text-base text-default">{paper.description}</p>}
+
+          {(paper.preprint || paper.slides || (paper.links && paper.links.length > 0)) && (
+            <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
+              {paper.preprint && (
+                <Link href={paper.preprint} target="_blank">
+                  preprint
+                </Link>
+              )}
+              {paper.slides && (
+                <Link href={paper.slides} target="_blank">
+                  slides
+                </Link>
+              )}
+              {paper.links &&
+                paper.links.map((link) => (
+                  <Link href={link.href} target="_blank">
+                    {link.text}
+                  </Link>
+                ))}
+            </div>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</WidgetWrapper>

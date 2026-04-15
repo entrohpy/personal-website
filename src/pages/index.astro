@@ -8,6 +8,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Steps from '~/components/widgets/Steps.astro';
+import Papers from '~/components/widgets/Papers.astro';
 import Link from '~/components/ui/Link.astro';
 import { getPermalink } from '~/utils/permalinks';
 
@@ -72,6 +73,36 @@ const metadata = {
     <!-- </Fragment> -->
   </Content>
 
+  <!-- Papers Widget ***************** -->
+
+  <Papers
+    id="publications"
+    title="Publications"
+    papers={[
+      {
+        title: 'Example paper title goes here',
+        authors: ['Rohit Nema', 'Co-author One', 'Co-author Two'],
+        highlightAuthor: 'Rohit Nema',
+        venue: 'CRYPTO',
+        venueFull: 'International Cryptology Conference',
+        year: 2025,
+        description:
+          'A short one- or two-sentence description summarizing the contribution of the paper.',
+        preprint: 'https://eprint.iacr.org/',
+        slides: 'https://example.com/slides.pdf',
+      },
+      {
+        title: 'Another paper on zero-knowledge proofs',
+        authors: ['Co-author A', 'Rohit Nema', 'Co-author B'],
+        highlightAuthor: 'Rohit Nema',
+        venue: 'EUROCRYPT',
+        venueFull: 'Annual International Conference on the Theory and Applications of Cryptographic Techniques',
+        year: 2024,
+        description: 'Another short description goes here.',
+        preprint: 'https://arxiv.org/',
+      },
+    ]}
+  />
 
   <Features3
     title="Papers"
