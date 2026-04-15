@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 
+import Headline from '~/components/ui/Headline.astro';
 import Header from '~/components/widgets/Header.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Content from '~/components/widgets/Content.astro';
@@ -13,7 +14,7 @@ import Link from '~/components/ui/Link.astro';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
-  title: "Ro's Homepage",
+  title: "Home",
 };
 ---
 
@@ -45,7 +46,7 @@ const metadata = {
         callToAction: {
           target: '_blank',
           text: 'GitHub',
-          href: 'github.com/entrohpy',
+          href: 'https://github.com/entrohpy',
         },
       },
     ]}
@@ -65,7 +66,7 @@ const metadata = {
       I'm broadly interested in applied zero-knowledge proofs, advanced encryption schemes, and multi-party computation. Feel free to check out my work below!
       </p>
       <br />
-      <p>See what else I've been up to on my <Link href="/misc">misc. page</Link>.</p>
+      <p>See what else I've been up to on my <Link href="/misc">miscellaneous page</Link>.</p>
     </Fragment>
   </Content>
 
@@ -73,7 +74,7 @@ const metadata = {
 
   <Papers
     id="publications"
-    title="Publications"
+    title="Publications & Preprints"
     papers={[
       {
         title: 'Efficient Batch Threshold Encryption Using Partial Fraction Techniques',
@@ -113,8 +114,15 @@ const metadata = {
         venueFull: 'International Symposium on Cyber Security, Cryptology, and Machine Learning',
         year: 2022,
         preprint: 'https://eprint.iacr.org/2022/380',
+        links: [{ text: 'conference', href: 'https://link.springer.com/chapter/10.1007/978-3-031-07689-3_30' }],
       },
     ]}
   />
+
+  <Papers id="talks" title="Talks" subtitle="coming soon...">
+  </Papers>
+
+  <Papers id="teaching" title="Teaching" subtitle="coming soon...">
+  </Papers>
 
 </Layout>
