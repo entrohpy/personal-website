@@ -1,0 +1,128 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Headline from '~/components/ui/Headline.astro';
+import Header from '~/components/widgets/Header.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Features3 from '~/components/widgets/Features3.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Papers from '~/components/widgets/Papers.astro';
+import Link from '~/components/ui/Link.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: "Home",
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="announcement"></Fragment>
+
+  <Content
+    id="about"
+    columns={3}
+    items={[
+      {
+    icon: 'tabler:mail',
+        callToAction: {
+          target: '_blank',
+          text: 'Email',
+          href: 'mailto:rnema@cs.stanford.edu',
+        },
+      },
+      {
+        icon: 'tabler:school',
+        callToAction: {
+          target: '_blank',
+          text: 'Scholar',
+          href: 'https://scholar.google.com/citations?user=hDh9bQEAAAAJ',
+        },
+      },
+      {
+        icon: 'tabler:brand-github',
+        callToAction: {
+          target: '_blank',
+          text: 'GitHub',
+          href: 'https://github.com/entrohpy',
+        },
+      },
+    ]}
+    image={{
+    src: '~/assets/images/profile.png',
+      alt: 'A picture of Ro',
+      loading: 'eager',
+    }}
+  >
+    <Fragment slot="content">
+      <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Hi, I'm Rohit (or Ro)!</h2>
+      <p>
+      I'm a PhD candidate in the
+      <Link href="https://crypto.stanford.edu" target="_blank">Applied Cryptography Group</Link> at Stanford University advised by <Link href="https://crypto.stanford.edu/~dabo/" target="_blank">Dan Boneh</Link>.
+      </p>
+      <p>
+      I'm broadly interested in applied zero-knowledge proofs, advanced encryption schemes, and multi-party computation. Feel free to check out my work below!
+      </p>
+      <br />
+      <p>See what else I've been up to on my <Link href="/misc">miscellaneous page</Link>.</p>
+    </Fragment>
+  </Content>
+
+  <!-- Papers Widget ***************** -->
+
+  <Papers
+    id="publications"
+    title="Publications & Preprints"
+    papers={[
+      {
+        title: 'Efficient Batch Threshold Encryption Using Partial Fraction Techniques',
+        authors: ['Dan Boneh', 'Rohit Nema', 'Arnab Roy', 'Ertem Nusret Tas'],
+        highlightAuthor: 'Rohit Nema',
+        preprint: 'https://eprint.iacr.org/2026/674',
+      },
+      {
+        title: 'Partial Fraction Techniques for Cryptography',
+        authors: ['Charanjit S. Jutla', 'Rohit Nema', 'Arnab Roy'],
+        highlightAuthor: 'Rohit Nema',
+        venue: 'EUROCRYPT',
+        venueFull: 'Annual International Conference on the Theory and Applications of Cryptographic Techniques',
+        year: 2026,
+        preprint: 'https://eprint.iacr.org/2025/2081',
+      },
+      {
+        title: 'Linear Secret-shared Shuffle with Malicious Security',
+        authors: ['Samuel Dittmer', 'Rohit Nema', 'Rafail Ostrovsky'],
+        highlightAuthor: 'Rohit Nema',
+        preprint: 'https://eprint.iacr.org/2025/2137',
+      },
+      {
+        title: 'Linear-time 2-party secure merge from additively homomorphic encryption',
+        authors: ['Brett Hemenway Falk', 'Rohit Nema', 'Rafail Ostrovsky'],
+        highlightAuthor: 'Rohit Nema',
+        venue: 'JCSS',
+        venueFull: 'Journal of Computer and System Sciences',
+        year: 2023,
+        links: [{ text: 'journal', href: 'https://www.sciencedirect.com/science/article/abs/pii/S002200002300048X' }],
+      },
+      {
+        title: 'A Linear-Time 2-Party Secure Merge Protocol',
+        authors: ['Brett Hemenway Falk', 'Rohit Nema', 'Rafail Ostrovsky'],
+        highlightAuthor: 'Rohit Nema',
+        venue: 'CSCML',
+        venueFull: 'International Symposium on Cyber Security, Cryptology, and Machine Learning',
+        year: 2022,
+        preprint: 'https://eprint.iacr.org/2022/380',
+        links: [{ text: 'conference', href: 'https://link.springer.com/chapter/10.1007/978-3-031-07689-3_30' }],
+      },
+    ]}
+  />
+
+  <Papers id="talks" title="Talks" subtitle="coming soon...">
+  </Papers>
+
+  <Papers id="teaching" title="Teaching" subtitle="coming soon...">
+  </Papers>
+
+</Layout>
