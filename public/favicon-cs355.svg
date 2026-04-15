@@ -1,5 +1,0 @@
-<!-- Placeholder — replace this file with the cs355.stanford.edu favicon (SVG or drop a .png/.ico and update Logo.astro). -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-  <rect width="32" height="32" rx="6" fill="rgb(86 91 129)"/>
-  <text x="16" y="21" text-anchor="middle" font-family="monospace" font-size="14" font-weight="bold" fill="white">zk</text>
-</svg>
