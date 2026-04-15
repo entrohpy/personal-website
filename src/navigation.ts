@@ -37,6 +37,6 @@ export const footerData = {
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/entrohpy' },
   ],
   footNote: `
-    Made by <a class="text-blue-600 underline dark:text-muted" href="https://github.com/entrohpy">Rohit Nema</a> using <a class="text-blue-600 underline dark:text-muted" href="https://github.com/arthelokyo/astrowind">AstroWind</a>· All rights reserved.
+    Made by <a class="text-primary underline" href="https://github.com/entrohpy">Rohit Nema</a> using <a class="text-primary underline" href="https://github.com/arthelokyo/astrowind">AstroWind</a>· All rights reserved.
   `,
 };
