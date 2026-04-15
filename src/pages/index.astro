@@ -8,6 +8,7 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Steps from '~/components/widgets/Steps.astro';
+import Link from '~/components/ui/Link.astro';
 import { getPermalink } from '~/utils/permalinks';
 
 const metadata = {
@@ -57,13 +58,13 @@ const metadata = {
       <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Hi, I'm Rohit (or Ro)!</h2>
       <p>
       I'm a PhD candidate in the
-      <a class="underline" href="https://crypto.stanford.edu" target="_blank">Applied Cryptography Group</a> at Stanford University advised by <a href="https://crypto.stanford.edu/~dabo/">Dan Boneh</a>.
+      <Link href="https://crypto.stanford.edu" target="_blank">Applied Cryptography Group</Link> at Stanford University advised by <Link href="https://crypto.stanford.edu/~dabo/" target="_blank">Dan Boneh</Link>.
       </p>
       <p>
       I'm broadly interested in applied zero-knowledge proofs, advanced encryption schemes, and multi-party computation. Feel free to check out my work below!
       </p>
       <br />
-      <p>See what else I've been up to on my <a>misc. page</p>
+      <p>See what else I've been up to on my <Link href="#">misc. page</Link>.</p>
     </Fragment>
 
     <!-- <Fragment slot="bg"> -->
