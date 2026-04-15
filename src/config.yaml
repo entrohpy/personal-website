@@ -10,7 +10,7 @@ site:
 metadata:
   title:
     default: "Rohit Nema's Homepage"
-    template: '%s — AstroWind'
+    template: "%s • Ro's Page"
   description: "Rohit's Academic Homepage. Learn more about me and my research."
   robots:
     index: true
@@ -18,9 +18,9 @@ metadata:
   openGraph:
     site_name: Rohit's Academic Homepage
     images:
-      - url: '~/assets/images/default.png'
-        width: 1200
-        height: 628
+      - url: '~/assets/images/profile.png'
+        width: 1000
+        height: 1000
     type: website
   # twitter:
   #   handle: '@arthelokyo'
