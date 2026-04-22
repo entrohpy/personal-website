@@ -1,4 +1,4 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
@@ -35,9 +35,7 @@ export const footerData = {
     { text: 'Teaching', href: getPermalink('/#teaching') },
     { text: 'Personal', href: getPermalink('/Personal') },
   ],
-  socialLinks: [
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/entrohpy' },
-  ],
+  socialLinks: [{ ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/entrohpy' }],
   footNote: `
     Made by <a class="text-primary underline" href="https://github.com/entrohpy">Rohit Nema</a> using <a class="text-primary underline" href="https://github.com/arthelokyo/astrowind">AstroWind</a>· All rights reserved.
   `,

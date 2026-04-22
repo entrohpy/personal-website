@@ -12,6 +12,6 @@ const { text = Astro.slots.render('default'), target, class: className = '', ...
 
 <a
   class={twMerge('underline cursor-pointer hover:text-primary transition ease-in duration-200', className)}
-  {...(target ? { target: target, rel: 'noopener noreferrer' } : {})}
-  {...rest}
-><Fragment set:html={text} /></a>
+  {...target ? { target: target, rel: 'noopener noreferrer' } : {}}
+  {...rest}><Fragment set:html={text} /></a
+>
