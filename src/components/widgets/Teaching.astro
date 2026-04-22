@@ -53,19 +53,21 @@ const {
                 {course.role}
               </span>
             )}
-            {course.date && (
-              <span class="text-sm text-muted">{course.date}</span>
-            )}
+            {course.date && <span class="text-sm text-muted">{course.date}</span>}
           </div>
           {course.description && <p class="text-sm text-muted">{course.description}</p>}
           {(course.site || (course.links && course.links.length > 0)) && (
             <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
               {course.site && (
-                <Link href={course.site} target="_blank">site</Link>
+                <Link href={course.site} target="_blank">
+                  site
+                </Link>
               )}
               {course.links &&
                 course.links.map((link) => (
-                  <Link href={link.href} target="_blank">{link.text}</Link>
+                  <Link href={link.href} target="_blank">
+                    {link.text}
+                  </Link>
                 ))}
             </div>
           )}
