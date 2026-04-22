@@ -21,8 +21,6 @@ const metadata = {
 ---
 
 <Layout metadata={metadata}>
-  <Fragment slot="announcement"></Fragment>
-
   <Content
     id="about"
     columns={3}
@@ -62,13 +60,17 @@ const metadata = {
       <h2 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Hi, I'm Rohit (or Ro)!</h2>
       <p>
       I'm a PhD candidate in the
-      <Link href="https://crypto.stanford.edu" target="_blank">Applied Cryptography Group</Link> at Stanford University advised by <Link href="https://crypto.stanford.edu/~dabo/" target="_blank">Dan Boneh</Link>.
+      <Link href="https://crypto.stanford.edu" target="_blank">Applied Cryptography Group</Link> at Stanford University, advised by <Link href="https://crypto.stanford.edu/~dabo/" target="_blank">Dan Boneh</Link>.
       </p>
       <p>
-      I'm broadly interested in applied zero-knowledge proofs, advanced encryption schemes, and multi-party computation. Feel free to check out my work below!
+      I'm broadly interested in applied zero-knowledge proofs, advanced encryption schemes, and multi-party computation. Feel free to explore my work below!
       </p>
       <br />
-      <p>See what else I've been up to on my <Link href="/misc">miscellaneous page</Link>.</p>
+      <p>
+      Prior to this, I majored in computer science and mathematics at UCLA, where I was fortunate to be mentored by <Link href="https://web.cs.ucla.edu/~rafail/">Rafail Ostrovsky</Link>.
+      </p>
+      <br />
+      <p>See what else I've been up to on my <Link href="/personal">personal page</Link>.</p>
     </Fragment>
   </Content>
 
@@ -100,6 +102,12 @@ const metadata = {
         preprint: 'https://eprint.iacr.org/2025/2137',
       },
       {
+        title: 'Game of Trust: How Trustworthy Does Your Blockchain Think You Are?',
+        authors: ['Petros Drineas', 'Rohit Nema', 'Rafail Ostrovsky', 'Vassilis Zikas'],
+        highlightAuthor: 'Rohit Nema',
+        preprint: 'https://arxiv.org/abs/2505.14551',
+      },
+      {
         title: 'Linear-time 2-party secure merge from additively homomorphic encryption',
         authors: ['Brett Hemenway Falk', 'Rohit Nema', 'Rafail Ostrovsky'],
         highlightAuthor: 'Rohit Nema',
@@ -120,8 +128,6 @@ const metadata = {
       },
     ]}
   />
-
-  <!-- Talks Widget ****************** -->
 
   <Talks
     id="talks"

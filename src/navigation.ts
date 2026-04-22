@@ -19,20 +19,21 @@ export const headerData = {
       href: getPermalink('/#teaching'),
     },
     {
-      text: 'Misc.',
-      href: getPermalink('/misc'),
+      text: 'Personal',
+      href: getPermalink('/personal'),
     },
   ],
   actions: [{ text: 'Email me', href: 'mailto:rnema@cs.stanford.edu', target: '_blank' }],
 };
 
 export const footerData = {
+  links: [],
   secondaryLinks: [
     { text: 'About', href: getPermalink('/#about') },
     { text: 'Papers', href: getPermalink('/#publications') },
     { text: 'Talks', href: getPermalink('/#talks') },
     { text: 'Teaching', href: getPermalink('/#teaching') },
-    { text: 'Misc.', href: getPermalink('/misc') },
+    { text: 'Personal', href: getPermalink('/Personal') },
   ],
   socialLinks: [
     { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/entrohpy' },
