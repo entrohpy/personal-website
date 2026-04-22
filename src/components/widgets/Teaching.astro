@@ -9,7 +9,8 @@ interface Course {
   date?: string;
   role?: string;
   description?: string;
-  href?: string;
+  site?: string;
+  links?: Array<{ text: string; href: string }>;
 }
 
 interface Props extends Omit<HeadlineProps, 'classes'>, Widget {
@@ -46,13 +47,7 @@ const {
       courses.map((course) => (
         <li class="flex flex-col gap-1">
           <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-            {course.href ? (
-              <h3 class="text-lg font-semibold">
-                <Link href={course.href} target="_blank" class="text-heading font-semibold">{course.title}</Link>
-              </h3>
-            ) : (
-              <h3 class="text-lg font-semibold text-heading">{course.title}</h3>
-            )}
+            <h3 class="text-lg font-semibold text-heading">{course.title}</h3>
             {course.role && (
               <span class="inline-flex items-center rounded-md border border-primary px-2 py-0.5 text-xs font-medium tracking-wide text-primary">
                 {course.role}
@@ -63,6 +58,17 @@ const {
             )}
           </div>
           {course.description && <p class="text-sm text-muted">{course.description}</p>}
+          {(course.site || (course.links && course.links.length > 0)) && (
+            <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
+              {course.site && (
+                <Link href={course.site} target="_blank">site</Link>
+              )}
+              {course.links &&
+                course.links.map((link) => (
+                  <Link href={link.href} target="_blank">{link.text}</Link>
+                ))}
+            </div>
+          )}
         </li>
       ))
     }
