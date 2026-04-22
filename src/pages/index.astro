@@ -10,6 +10,7 @@ import Features3 from '~/components/widgets/Features3.astro';
 import Testimonials from '~/components/widgets/Testimonials.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Papers from '~/components/widgets/Papers.astro';
+import Talks from '~/components/widgets/Talks.astro';
 import Link from '~/components/ui/Link.astro';
 import { getPermalink } from '~/utils/permalinks';
 
@@ -119,8 +120,40 @@ const metadata = {
     ]}
   />
 
-  <Papers id="talks" title="Talks" subtitle="coming soon...">
-  </Papers>
+  <!-- Talks Widget ****************** -->
+
+  <Talks
+    id="talks"
+    title="Talks"
+    talks={[
+      {
+        title: 'Example talk title',
+        appearances: [
+          {
+            venue: 'Conference A',
+            date: 'June 2026',
+            slides: '#',
+            video: '#',
+          },
+          {
+            venue: 'University Seminar',
+            date: 'March 2026',
+            slides: '#',
+          },
+        ],
+      },
+      {
+        title: 'Another talk',
+        appearances: [
+          {
+            venue: 'Workshop B',
+            date: 'January 2025',
+            video: '#',
+          },
+        ],
+      },
+    ]}
+  />
 
   <Papers id="teaching" title="Teaching" subtitle="coming soon...">
   </Papers>

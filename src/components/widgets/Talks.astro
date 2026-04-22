@@ -1,0 +1,91 @@
+---
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Link from '~/components/ui/Link.astro';
+import type { Widget, Headline as HeadlineProps } from '~/types';
+
+interface Appearance {
+  venue: string;
+  date?: string;
+  slides?: string;
+  video?: string;
+  links?: Array<{ text: string; href: string }>;
+}
+
+interface Talk {
+  title: string;
+  description?: string;
+  appearances: Array<Appearance>;
+}
+
+interface Props extends Omit<HeadlineProps, 'classes'>, Widget {
+  talks?: Array<Talk>;
+}
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+  talks = [],
+
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props as Props;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl ${classes?.container ?? ''}`} bg={bg}>
+  <Headline
+    title={title}
+    subtitle={subtitle}
+    tagline={tagline}
+    classes={{
+      container: 'text-left rtl:text-right',
+      title: 'text-3xl lg:text-4xl',
+      ...((classes?.headline as object) ?? {}),
+    }}
+  />
+
+  <ul class="flex flex-col gap-8">
+    {
+      talks.map((talk) => (
+        <li class="flex flex-col gap-2">
+          <h3 class="text-lg font-semibold text-heading">{talk.title}</h3>
+
+          {talk.description && <p class="text-base text-default">{talk.description}</p>}
+
+          <div class="border-l-2 border-primary/30 pl-4 flex flex-col gap-3">
+            {talk.appearances.map((appearance) => (
+              <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                <p class="text-sm">
+                  <span class="text-default">{appearance.venue}</span>
+                  {appearance.date && (
+                    <Fragment>
+                      <span class="text-muted"> · </span>
+                      <span class="text-muted">{appearance.date}</span>
+                    </Fragment>
+                  )}
+                </p>
+                {(appearance.slides || appearance.video || (appearance.links && appearance.links.length > 0)) && (
+                  <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm">
+                    {appearance.slides && (
+                      <Link href={appearance.slides} target="_blank">slides</Link>
+                    )}
+                    {appearance.video && (
+                      <Link href={appearance.video} target="_blank">video</Link>
+                    )}
+                    {appearance.links &&
+                      appearance.links.map((link) => (
+                        <Link href={link.href} target="_blank">{link.text}</Link>
+                      ))}
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</WidgetWrapper>
