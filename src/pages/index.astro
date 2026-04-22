@@ -3,6 +3,8 @@ import Layout from '~/layouts/PageLayout.astro';
 
 import Content from '~/components/widgets/Content.astro';
 import Papers from '~/components/widgets/Papers.astro';
+import Talks from '~/components/widgets/Talks.astro';
+import Teaching from '~/components/widgets/Teaching.astro';
 import Link from '~/components/ui/Link.astro';
 
 const metadata = {
@@ -123,7 +125,60 @@ const metadata = {
     ]}
   />
 
-  <Papers id="talks" title="Talks" subtitle="coming soon..." />
+  <Talks
+    id="talks"
+    title="Talks"
+    talks={[
+      {
+        title: 'Batch Threshold Encryption',
+        appearances: [
+          {
+            title: 'New Results in Multi-User Cryptography Using Rational Functions',
+            venue: 'Stanford Computer Forum',
+            date: 'April 2026',
+          },
+        ],
+      },
+      {
+        title: 'Partial Fraction Techniques For Cryptography',
+        appearances: [
+          {
+            venue: 'Bay Area Crypto Day',
+            date: 'November 2025',
+          },
+        ],
+      },
+    ]}
+  />
+
+  <!-- Teaching Widget **************** -->
+
+  <Teaching
+      id="teaching"
+      title="Teaching"
+      courses={[
+      {
+      title: 'CS 355: Advanced Topics in Cryptography',
+      date: 'Spring 2026',
+      role: 'Instructor',
+      description: 'Upper undergraduate or graduate course in cryptography. Covers several topics such as foundations, cryptanalysis, elliptic curves, zero-knowledge proofs, multi-party computation, lattices, et cetera. Formal security definitions and proofs. Co-taught with Trisha Datta and Aditi Partap.',
+      site: 'https://cs355.stanford.edu',
+      },
+      {
+      title: 'CS 355: Applied Zero Knowledge Proofs',
+      date: 'Spring 2025',
+      role: 'Assistant',
+      description: 'In-depth coverage of how SNARKs work and how to use them in practice. Problem sets and programming assignment. Co-organized recitation to strengthen topics covered in class.',
+      site: 'https://securitylab.github.io/cs355-spring25/',
+      },
+      {
+      title: 'CS 355: Advanced Topics in Cryptography',
+      date: 'Spring 2024',
+      role: 'Assistant',
+      site: 'https://crypto.stanford.edu/cs355/24sp/',
+      },
+      ]}
+      />
 
   <Papers id="teaching" title="Teaching" subtitle="coming soon..." />
 </Layout>
