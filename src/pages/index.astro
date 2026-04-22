@@ -11,6 +11,7 @@ import Testimonials from '~/components/widgets/Testimonials.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import Papers from '~/components/widgets/Papers.astro';
 import Talks from '~/components/widgets/Talks.astro';
+import Teaching from '~/components/widgets/Teaching.astro';
 import Link from '~/components/ui/Link.astro';
 import { getPermalink } from '~/utils/permalinks';
 
@@ -148,7 +149,23 @@ const metadata = {
     ]}
   />
 
-  <Papers id="teaching" title="Teaching" subtitle="coming soon...">
-  </Papers>
+  <!-- Teaching Widget **************** -->
+
+  <Teaching
+    id="teaching"
+    title="Teaching"
+    courses={[
+      {
+        title: 'CS 355: Applied Zero Knowledge Proofs',
+        role: 'Instructor',
+        description: 'An introduction to modern zero-knowledge proof systems and their applications.',
+        href: 'https://cs355.stanford.edu',
+      },
+      {
+        title: 'CS 255: Introduction to Cryptography',
+        role: 'Course Assistant',
+      },
+    ]}
+  />
 
 </Layout>

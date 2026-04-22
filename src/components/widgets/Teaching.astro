@@ -1,0 +1,66 @@
+---
+import Headline from '~/components/ui/Headline.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
+import Link from '~/components/ui/Link.astro';
+import type { Widget, Headline as HeadlineProps } from '~/types';
+
+interface Course {
+  title: string;
+  role?: string;
+  description?: string;
+  href?: string;
+}
+
+interface Props extends Omit<HeadlineProps, 'classes'>, Widget {
+  courses?: Array<Course>;
+}
+
+const {
+  title = await Astro.slots.render('title'),
+  subtitle = await Astro.slots.render('subtitle'),
+  tagline = await Astro.slots.render('tagline'),
+  courses = [],
+
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render('bg'),
+} = Astro.props as Props;
+---
+
+<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl ${classes?.container ?? ''}`} bg={bg}>
+  <Headline
+    title={title}
+    subtitle={subtitle}
+    tagline={tagline}
+    classes={{
+      container: 'text-left rtl:text-right',
+      title: 'text-3xl lg:text-4xl',
+      ...((classes?.headline as object) ?? {}),
+    }}
+  />
+
+  <ul class="flex flex-col gap-6">
+    {
+      courses.map((course) => (
+        <li class="flex flex-col gap-1">
+          <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            {course.href ? (
+              <h3 class="text-lg font-semibold">
+                <Link href={course.href} target="_blank" class="text-heading font-semibold">{course.title}</Link>
+              </h3>
+            ) : (
+              <h3 class="text-lg font-semibold text-heading">{course.title}</h3>
+            )}
+            {course.role && (
+              <span class="inline-flex items-center rounded-md border border-primary px-2 py-0.5 text-xs font-medium tracking-wide text-primary">
+                {course.role}
+              </span>
+            )}
+          </div>
+          {course.description && <p class="text-sm text-muted">{course.description}</p>}
+        </li>
+      ))
+    }
+  </ul>
+</WidgetWrapper>
