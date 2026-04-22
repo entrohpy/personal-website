@@ -6,6 +6,7 @@ import type { Widget, Headline as HeadlineProps } from '~/types';
 
 interface Course {
   title: string;
+  date?: string;
   role?: string;
   description?: string;
   href?: string;
@@ -56,6 +57,9 @@ const {
               <span class="inline-flex items-center rounded-md border border-primary px-2 py-0.5 text-xs font-medium tracking-wide text-primary">
                 {course.role}
               </span>
+            )}
+            {course.date && (
+              <span class="text-sm text-muted">{course.date}</span>
             )}
           </div>
           {course.description && <p class="text-sm text-muted">{course.description}</p>}
