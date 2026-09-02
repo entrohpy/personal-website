@@ -15,7 +15,6 @@ const {
   items = [],
   columns,
   image = await Astro.slots.render('image'),
-  imageCaption,
   isReversed = false,
   isAfterContent = false,
 
@@ -69,10 +68,10 @@ const {
           }}
         />
       </div>
-      <div class="mt-10 md:mt-0 md:basis-1/2">
+      <div aria-hidden="true" class="mt-10 md:mt-0 md:basis-1/2">
         {
           image && (
-            <figure class="relative m-auto max-w-4xl">
+            <div class="relative m-auto max-w-4xl">
               {typeof image === 'string' ? (
                 <Fragment set:html={image} />
               ) : (
@@ -86,8 +85,7 @@ const {
                   {...image}
                 />
               )}
-              {imageCaption && <figcaption class="mt-2 text-center text-sm text-muted">{imageCaption}</figcaption>}
-            </figure>
+            </div>
           )
         }
       </div>
