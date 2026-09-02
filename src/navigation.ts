@@ -23,7 +23,7 @@ export const headerData = {
       href: getPermalink('/personal'),
     },
   ],
-  actions: [{ text: 'Email me', href: 'mailto:rnema@cs.stanford.edu', target: '_blank' }],
+  actions: [{ text: 'Email me', href: 'mailto:ro@cs.stanford.edu', target: '_blank' }],
 };
 
 export const footerData = {
